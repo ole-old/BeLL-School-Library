@@ -382,7 +382,7 @@
                                 '</a>' 
             ;
           }      
-          if (resource_data.openWith == "flowplayer") {
+          else if (resource_data.openWith == "flowplayer") {
             // URL for PDF JS Viewer
             item +=             '<a data-role="button" data-theme="b" href="/' + db + '/_design/flowplayer/index.html?doc='+ resource_data._id + '" ' +
                                   'data-icon="arrow-d" data-iconpos="right">' +
