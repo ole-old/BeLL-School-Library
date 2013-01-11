@@ -16,7 +16,8 @@ jQuery.fn.saveResourceForm = function(itemID, itemType) {
     itemLevel = $('.settingsForm select#level').val(),
     itemNewLevel = $('.settingsForm input#newLevel').val(),
     itemFilename = $('.settingsForm input:file').val(), 
-    itemResourceURL = $('.settingsForm input#resourceURL').val();
+    itemResourceURL = $('.settingsForm input#resourceURL').val(),
+    itemOpenWith = $('.settingsForm select#openWith').val();
   
   if(itemNewLevel) {
     itemLevel = itemNewLevel
@@ -66,7 +67,8 @@ jQuery.fn.saveResourceForm = function(itemID, itemType) {
     "date":itemDate,
     "level": parseInt(itemLevel),
     "subject": itemSubject,
-    "resource_url": itemResourceURL
+    "resource_url": itemResourceURL,
+    "openWith": itemOpenWith
   }, {
     success: function(){
       
@@ -109,6 +111,7 @@ jQuery.fn.saveResourceForm = function(itemID, itemType) {
                 "level": parseInt(itemLevel),
                 "subject": itemSubject,
                 "resource_url": itemResourceURL,
+                "openWith": itemOpenWith,
                 "_attachments":itemAttachment
               }, {
                 success: function() { 

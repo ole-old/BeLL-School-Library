@@ -366,7 +366,16 @@
                                       'begin' +
                                 '</a>' 
             ;
-          }          
+          } 
+          else if (resource_data.openWith) {
+            // Find PDF's URL @todo
+
+            item +=             '<a data-role="button" data-theme="b" href="/' + db + '/_design/pdf-js-viewer/web/viewer.html?url=/' + db + '/' + resource_data._id + '/' + resource_data.filename + '" ' +
+                                  'data-icon="arrow-d" data-iconpos="right">' +
+                                      'begin' +
+                                '</a>' 
+            ;
+          }         
           else if (resource_data._attachments) {
             $.each(resource_data._attachments, function (key, value) {
               item +=             '<a rel="external" data-role="button" data-theme="b" href="/' + db + '/' + encodeURIComponent(resource_data._id) + '/' + encodeURIComponent(key) + '" ' +
@@ -376,6 +385,7 @@
               ;
             })
           }
+
 
 
           item +=               '<div style=" text-align:center">' +
