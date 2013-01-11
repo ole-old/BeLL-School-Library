@@ -154,17 +154,20 @@
                             <!--<button id="upload" name="upload" data-inline="true">Upload New File</button>-->
                             <input type="file" name="_attachments" id="_attachments" multiple="multiple" />
                         </div>
-                        <div data-role="fieldcontain">
-                            <label for="resourceURL" class="resourceURLLabel">URL</label>
-                            <input type="text" name="resourceURL" id="resourceURL" value=""  />
-                        </div>
+
 
                         <div data-role="fieldcontain" class="openWithField">
                             <label for="openWith" class="openWithLabel">Open with</label>
                             <select name="openWith" id="openWith"> 
+                                <option value="just-download">Just download</option> 
                                 <option value="pdf-js-viewer">PDF.JS Viewer</option>
-                                <option value="flow-player">Flow Player</option> 
+                                <option value="go-to-url">Go to URL</option> 
                            </select>
+                        </div>
+
+                        <div data-role="fieldcontain">
+                            <label for="resourceURL" class="resourceURLLabel">URL</label>
+                            <input type="text" name="resourceURL" id="resourceURL" value=""  />
                         </div>
                         
                         <div data-role="fieldcontain" class="finalField">
