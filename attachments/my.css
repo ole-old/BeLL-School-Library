@@ -24,7 +24,7 @@ margin: 0 auto !important;
 }
 
 .ui-header {
-  background: url(images/star-taller.png) !important;
+  /* background: url(images/star-taller.png) !important; */
   padding: 6px;
 }
 .ui-header .ui-btn-inner .ui-btn-text {

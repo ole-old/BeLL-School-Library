@@ -49,7 +49,7 @@
       var html = 
       '<ul class="my-subjects" data-role="listview" data-divider-theme="b" data-inset="true">' +
         '<li data-role="list-divider" role="heading">' +
-           'My Subjects' +  
+           'Subjects' +  
         '</li>' 
       ;
 
