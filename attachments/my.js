@@ -7,7 +7,7 @@
   $("#page-login").live("pagebeforeshow", function(e, d) {
     $.couch.session({
       success: function(data) {
-          if(data.userCtx.name == null) {
+          if(data.userCtx.name != null) {
             $.mobile.changePage("#page-student-dashboard")
           }
       }
@@ -367,14 +367,8 @@
           //
           // Add our links to the resource
           //
-          if (resource_data.resource_url) {
-            item +=             '<a data-role="button" data-theme="b" href="/' + db + '/' + resource_data.resource_url + '" ' +
-                                  'data-icon="arrow-d" data-iconpos="right">' +
-                                      'begin' +
-                                '</a>' 
-            ;
-          } 
-          else if (resource_data.openWith) {
+
+          if (resource_data.openWith == "pdf-js-viewer") {
             // URL for PDF JS Viewer
             item +=             '<a data-role="button" data-theme="b" href="/' + db + '/_design/pdf-js-viewer/web/viewer.html?url=/' + db + '/' + resource_data._id + '/' + resource_data.filename + '" ' +
                                   'data-icon="arrow-d" data-iconpos="right">' +
@@ -387,7 +381,28 @@
                                       'download' +
                                 '</a>' 
             ;
-          }         
+          }      
+          if (resource_data.openWith == "flowplayer") {
+            // URL for PDF JS Viewer
+            item +=             '<a data-role="button" data-theme="b" href="/' + db + '/_design/flowplayer/index.html?doc='+ resource_data._id + '" ' +
+                                  'data-icon="arrow-d" data-iconpos="right">' +
+                                      'begin' +
+                                '</a>' 
+            ;
+            // Download URL
+            item +=             '<a data-role="button" data-theme="b" href="/' + db + '/' + resource_data._id + '/' + resource_data.filename + '" ' +
+                                  'data-icon="arrow-d" data-iconpos="right">' +
+                                      'download' +
+                                '</a>' 
+            ;
+          } 
+          else if (resource_data.resource_url) {
+            item +=             '<a data-role="button" data-theme="b" href="/' + db + '/' + resource_data.resource_url + '" ' +
+                                  'data-icon="arrow-d" data-iconpos="right">' +
+                                      'begin' +
+                                '</a>' 
+            ;
+          }    
           else if (resource_data._attachments) {
             $.each(resource_data._attachments, function (key, value) {
               item +=             '<a rel="external" data-role="button" data-theme="b" href="/' + db + '/' + encodeURIComponent(resource_data._id) + '/' + encodeURIComponent(key) + '" ' +
