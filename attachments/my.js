@@ -375,11 +375,16 @@
             ;
           } 
           else if (resource_data.openWith) {
-            // Find PDF's URL @todo
-
+            // URL for PDF JS Viewer
             item +=             '<a data-role="button" data-theme="b" href="/' + db + '/_design/pdf-js-viewer/web/viewer.html?url=/' + db + '/' + resource_data._id + '/' + resource_data.filename + '" ' +
                                   'data-icon="arrow-d" data-iconpos="right">' +
                                       'begin' +
+                                '</a>' 
+            ;
+            // Download URL
+            item +=             '<a data-role="button" data-theme="b" href="/' + db + '/' + resource_data._id + '/' + resource_data.filename + '" ' +
+                                  'data-icon="arrow-d" data-iconpos="right">' +
+                                      'download' +
                                 '</a>' 
             ;
           }         
