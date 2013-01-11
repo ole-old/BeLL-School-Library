@@ -83,6 +83,7 @@ jQuery.fn.saveResourceForm = function(itemID, itemType) {
         
         $("form :file").each(function() {
           data[this.name] = this.value.replace(/^C:\\fakepath\\/g, ''); // file inputs need special handling
+          // results in {"_attachments: "name of the file"}
         });
         
         itemFilename = data._attachments;

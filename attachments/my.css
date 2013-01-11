@@ -35,6 +35,10 @@ margin: 0 auto !important;
   background: url(images/bg-bd-lite.png) !important;
 }
 
+.ui-body-c, .ui-overlay-c {
+  background: #FFF !important;
+}
+
 .loading {
   color: #FFF;
   font-size:60px;
