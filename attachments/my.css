@@ -31,6 +31,13 @@ margin: 0 auto !important;
   font-size:36px;
 }
 
+.ui-bar-b {
+  background: linear-gradient(#79C231, #588C24) repeat scroll 0 0 #5E87B0 !important;
+  text-shadow: 0 1px 1px #000 !important;
+  border: solid #000 1px !important;
+  border-width: 1px 0px !important;
+}
+
 .ui-body-b, .ui-overlay-b {
   background: url(images/bg-bd-lite.png) !important;
 }
