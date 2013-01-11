@@ -5,6 +5,13 @@
    */
 
   $("#page-login").live("pagebeforeshow", function(e, d) {
+    $.couch.session({
+      success: function(data) {
+          if(data.userCtx.name == null) {
+            $.mobile.changePage("#page-student-dashboard")
+          }
+      }
+    });
     $("#login").bind("submit", function(){
       var currentTime = new Date()
       var form = {
