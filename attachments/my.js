@@ -382,6 +382,22 @@
                                 '</a>' 
             ;
           }      
+          else if (resource_data.openWith == "bell-reader") {
+            // URL for PDF JS Viewer
+            item +=             '<a data-role="button" data-theme="b" href="/' + db + '/_design/bell-reader/index.html?doc='+ resource_data._id + '" ' +
+                                  'data-icon="arrow-d" data-iconpos="right">' +
+                                      'begin' +
+                                '</a>' 
+            ;
+            /* @todo Find the PDF in the attachments and offer that as a download
+            // Download URL
+            item +=             '<a data-role="button" data-theme="b" href="/' + db + '/' + resource_data._id + '/' + resource_data.filename + '" ' +
+                                  'data-icon="arrow-d" data-iconpos="right">' +
+                                      'download' +
+                                '</a>' 
+            ;
+            */
+          } 
           else if (resource_data.openWith == "flowplayer") {
             // URL for PDF JS Viewer
             item +=             '<a data-role="button" data-theme="b" href="/' + db + '/_design/flowplayer/index.html?doc='+ resource_data._id + '" ' +
